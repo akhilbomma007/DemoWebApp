@@ -45,8 +45,7 @@ namespace DemoWebApp.Controllers
                     model.FirstName,
                     model.LastName,
                     model.Email_Id,
-                    model.Password);
-                    //Crypto.Hash(model.Password));
+                    Crypto.Hash(model.Password));
                 return RedirectToAction("Index");
             }
             return View();
