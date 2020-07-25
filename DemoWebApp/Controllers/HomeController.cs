@@ -40,12 +40,13 @@ namespace DemoWebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                int records =  EmployeeProcessor.CreateEmployee(
-                    model.EmployeeId, 
-                    model.FirstName, 
-                    model.LastName, 
+                int records = EmployeeProcessor.CreateEmployee(
+                    model.EmployeeId,
+                    model.FirstName,
+                    model.LastName,
                     model.Email_Id,
-                    Crypto.Hash(model.Password));
+                    model.Password);
+                    //Crypto.Hash(model.Password));
                 return RedirectToAction("Index");
             }
             return View();
